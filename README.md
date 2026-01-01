@@ -65,33 +65,32 @@ The project consists of three main modules:
 
 The **Trash2Treasure** project is organized into multiple modules to ensure scalability, maintainability, and ease of contribution. Below is the complete directory structure with a brief explanation of each folder and file.
 
-
 ```
 trash2treasure/
 │
-├── frontend/                     # Citizen Web Application
+├── frontend/                     # Citizen Web Application (React)
 │   ├── public/
-│   │   └── index.html            # Main HTML entry point
+│   │   └── index.html
 │   ├── src/
-│   │   ├── components/           # Reusable UI components
+│   │   ├── components/
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── Footer.jsx
-│   │   │   ├── UploadForm.jsx    # Upload image & report form
-│   │   │   └── ReportCard.jsx    # Display complaint info
-│   │   ├── pages/                # Application pages
+│   │   │   ├── UploadForm.jsx
+│   │   │   └── ReportCard.jsx
+│   │   ├── pages/
 │   │   │   ├── Home.jsx
 │   │   │   ├── Report.jsx
 │   │   │   ├── Login.jsx
 │   │   │   └── Register.jsx
 │   │   ├── services/
-│   │   │   └── api.js            # API communication layer
+│   │   │   └── api.js
 │   │   ├── styles/
-│   │   │   └── main.css          # Global styles
-│   │   ├── App.jsx               # Root component
-│   │   └── main.jsx              # React DOM entry
+│   │   │   └── main.css
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │   └── package.json
 │
-├── admin-dashboard/              # Municipal Authority Panel
+├── admin-dashboard/              # Municipal Authority Panel (React)
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Sidebar.jsx
@@ -102,26 +101,57 @@ trash2treasure/
 │   │   │   ├── Complaints.jsx
 │   │   │   └── Analytics.jsx
 │   │   ├── services/
-│   │   │   └── adminApi.js       # Admin API calls
+│   │   │   └── adminApi.js
 │   │   └── App.jsx
 │   └── package.json
 │
-├── backend/                      # Server & REST APIs
-│   ├── controllers/              # Business logic
-│   │   ├── authController.js
-│   │   └── reportController.js
-│   ├── models/                   # Database schemas
-│   │   ├── User.js
-│   │   └── Report.js
-│   ├── routes/                   # API routes
-│   │   ├── authRoutes.js
-│   │   └── reportRoutes.js
-│   ├── middleware/               # Authentication & validation
-│   │   └── authMiddleware.js
-│   ├── config/
-│   │   └── db.js                 # Database connection
-│   ├── server.js                 # Application entry point
-│   └── package.json
+├── backend/                      # Spring Boot Backend
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── trash2treasure/
+│   │   │   │           ├── Trash2TreasureApplication.java
+│   │   │   │
+│   │   │   │           ├── controller/          # REST Controllers
+│   │   │   │           │   ├── AuthController.java
+│   │   │   │           │   └── ReportController.java
+│   │   │   │
+│   │   │   │           ├── service/              # Business Logic
+│   │   │   │           │   ├── AuthService.java
+│   │   │   │           │   └── ReportService.java
+│   │   │   │
+│   │   │   │           ├── repository/           # JPA Repositories
+│   │   │   │           │   ├── UserRepository.java
+│   │   │   │           │   └── ReportRepository.java
+│   │   │   │
+│   │   │   │           ├── model/                # Entities
+│   │   │   │           │   ├── User.java
+│   │   │   │           │   └── Report.java
+│   │   │   │
+│   │   │   │           ├── dto/                  # Request/Response DTOs
+│   │   │   │           │   ├── LoginRequest.java
+│   │   │   │           │   └── ReportRequest.java
+│   │   │   │
+│   │   │   │           ├── config/               # Configurations
+│   │   │   │           │   ├── CorsConfig.java
+│   │   │   │           │   └── SecurityConfig.java (later)
+│   │   │   │
+│   │   │   │           └── exception/            # Global Exceptions
+│   │   │   │               └── GlobalExceptionHandler.java
+│   │   │
+│   │   │   └── resources/
+│   │   │       ├── application.properties
+│   │   │       └── data.sql (optional)
+│   │   │
+│   │   └── test/
+│   │       └── java/
+│   │           └── com/
+│   │               └── trash2treasure/
+│   │                   └── Trash2TreasureApplicationTests.java
+│   │
+│   ├── pom.xml
+│   └── README.md
 │
 ├── docs/                         # Project documentation
 │   ├── architecture.md
@@ -144,8 +174,8 @@ trash2treasure/
 - Tailwind CSS / Bootstrap  
 
 ### Backend
-- Node.js  
-- Express.js  
+- Spring Boot  
+- (updating Technologies) 
 
 ### Database
 - MongoDB  
