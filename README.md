@@ -1,3 +1,7 @@
+🚧 This project is being built from scratch as part of ECWoC 2026. Core features and architecture are under active development, and contributions are welcome.
+
+---
+
 # 🗑️ Trash2Treasure
 ### A Citizen-Driven Cleanliness Reporting Platform 🇮🇳
 
